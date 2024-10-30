@@ -75,7 +75,7 @@ This application is ideal for anyone needing a clear and simple digital clock di
 
 ## 中文說明
 
-這個程式是一個簡單的全螢幕數位時鐘應用程式，使用 PyQt5 開發。它以大而易讀的格式顯示當前時間，非常適合用作桌面時鐘或在演示中使用。
+這個程式是一個簡單的全螢幕數位時鐘應用程式，使用 PyQt5 開發。它以大而易讀的格式顯示當前時間，非常適合作為桌面時鐘使用。
 
 ### 主要功能：
 
