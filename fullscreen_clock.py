@@ -1,7 +1,10 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QVBoxLayout, QWidget, QMessageBox
-from PyQt5.QtCore import QTimer, QTime, Qt
+from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QVBoxLayout, QWidget, QMessageBox, QDesktopWidget
+from PyQt5.QtCore import QTimer, Qt
 from PyQt5.QtGui import QFont, QColor, QPalette
+from babel.dates import format_time
+from datetime import datetime
+import pytz
 
 class FullScreenClock(QMainWindow):
     def __init__(self):
@@ -41,8 +44,12 @@ class FullScreenClock(QMainWindow):
         self.update_time()
 
     def update_time(self):
-        current_time = QTime.currentTime().toString('HH:mm:ss')
-        self.label.setText(current_time)
+        # Get current time in Taipei timezone
+        taipei_tz = pytz.timezone('Asia/Taipei')
+        current_time = datetime.now(taipei_tz)
+        # Format time using Babel with "HH:mm:ss"
+        formatted_time = format_time(current_time, format='HH:mm:ss', locale='zh_TW')
+        self.label.setText(formatted_time)
 
     def keyPressEvent(self, event):
         if event.modifiers() == Qt.ControlModifier and event.key() == Qt.Key_Q:
@@ -51,6 +58,8 @@ class FullScreenClock(QMainWindow):
             self.change_font_size(10)
         elif event.key() == Qt.Key_Minus:
             self.change_font_size(-10)
+        elif Qt.Key_1 <= event.key() <= Qt.Key_9:
+            self.switch_screen(event.key() - Qt.Key_0)
 
     def change_font_size(self, delta):
         self.font_size += delta
@@ -63,6 +72,14 @@ class FullScreenClock(QMainWindow):
                                      QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
         if reply == QMessageBox.Yes:
             self.close()
+
+    def switch_screen(self, screen_number):
+        desktop = QDesktopWidget()
+        screen_count = desktop.screenCount()
+        if 1 <= screen_number <= screen_count:
+            screen_geometry = desktop.screenGeometry(screen_number - 1)
+            self.move(screen_geometry.topLeft())
+            self.resize(screen_geometry.width(), screen_geometry.height())
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
