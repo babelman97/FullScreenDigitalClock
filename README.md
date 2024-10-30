@@ -19,7 +19,7 @@ A simple full-screen digital clock application built with PyQt5.
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/FullScreenDigitalClock.git
+   git clone https://github.com/babelman97/FullScreenDigitalClock.git
    cd FullScreenDigitalClock
 
 2. Install the required packages:
