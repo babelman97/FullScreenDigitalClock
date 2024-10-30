@@ -4,15 +4,20 @@ A simple full-screen digital clock application built with PyQt5.
 
 ## Features
 
+## Features
+
 - Displays the current time in `HH:mm:ss` format.
 - Full-screen mode for a clear and unobstructed view.
 - Adjustable font size using `+` and `-` keys.
 - Exit the application with `Ctrl + Q`.
+- Switch between screens using number keys (1-9).
 
 ## Requirements
 
 - Python 3.x
 - PyQt5
+- Babel
+- pytz
 
 ## Installation
 
@@ -25,7 +30,7 @@ A simple full-screen digital clock application built with PyQt5.
 2. Install the required packages:
 
    ```bash
-   pip install PyQt5
+   pip install -r requirements.txt
 
 ## Usage
 
@@ -40,6 +45,7 @@ Run the application with:
 - Increase Font Size: Press + or =
 - Decrease Font Size: Press -
 - Exit: Press Ctrl + Q
+- Switch Screen: Press 1-9
 
 ## License
 This project is licensed under the MIT License.
@@ -62,12 +68,14 @@ This program is a simple full-screen digital clock application developed using P
 - **Full-Screen Display**: The clock runs in full-screen mode, providing an unobstructed view of the time.
 - **Adjustable Font Size**: Users can increase or decrease the font size using the `+` and `-` keys to suit their preferences.
 - **Easy Exit**: The application can be closed quickly with the `Ctrl + Q` shortcut.
+- **Screen Switching**: Easily switch between screens using number keys (1-9).
 
 ### Usage Instructions:
 
 1. **Launch the Application**: Run the script to start the clock.
 2. **Adjust Font Size**: Use the `+` or `=` key to increase the font size, and the `-` key to decrease it.
-3. **Exit the Application**: Press `Ctrl + Q` to close the clock.
+3. **Switch Screens**: Use number keys (1-9) to switch between screens.
+4. **Exit the Application**: Press `Ctrl + Q` to close the clock.
 
 This application is ideal for anyone needing a clear and simple digital clock display on their screen.
 
@@ -82,12 +90,14 @@ This application is ideal for anyone needing a clear and simple digital clock di
 - **全螢幕顯示**：時鐘以全螢幕模式運行，提供清晰的時間顯示。
 - **可調整字體大小**：使用者可以使用 `+` 和 `-` 鍵來增加或減小字體大小，以符合個人喜好。
 - **簡單退出**：可以使用 `Ctrl + Q` 快捷鍵快速關閉應用程式。
+- **螢幕切換**： 使用數字鍵 (1-9) 輕鬆切換螢幕。
 
 ### 使用說明：
 
 1. **啟動應用程式**：運行腳本以啟動時鐘。
 2. **調整字體大小**：使用 `+` 或 `=` 鍵增加字體大小，使用 `-` 鍵減小字體大小。
-3. **退出應用程式**：按下 `Ctrl + Q` 關閉時鐘。
+3. **切換螢幕**：使用數字鍵 (1-9) 切換螢幕。
+4. **退出應用程式**：按下 `Ctrl + Q` 關閉時鐘。
 
 這個應用程式非常適合需要在螢幕上顯示清晰簡單數位時鐘的人士。
 
