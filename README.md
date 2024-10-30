@@ -2,6 +2,8 @@
 
 A simple full-screen digital clock application built with PyQt5.
 
+<img src="https://github.com/user-attachments/assets/91dbc46f-860e-43a8-be12-b1f6efec7e3a" width="50%" />
+
 ## Features
 
 ## Features
